@@ -1,0 +1,203 @@
+import Link from "next/link";
+import { Home as HomeIcon, Mail, Phone, Search, Users, BarChart2, Settings, DollarSign, Target } from "lucide-react";
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-zinc-50 dark:bg-black text-black dark:text-white">
+      <div className="flex min-h-screen">
+        {/* Sidebar Navigation */}
+        <aside className="w-64 bg-white dark:bg-zinc-900 border-r border-zinc-200 dark:border-zinc-800 p-6 flex flex-col">
+          <div className="flex items-center gap-3 mb-8">
+            <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">HCP</span>
+            </div>
+            <div>
+              <h1 className="font-semibold text-lg">Home Comfort Partners</h1>
+              <p className="text-xs text-zinc-500 dark:text-zinc-400">Mission Control Dashboard</p>
+            </div>
+          </div>
+          
+          <nav className="flex-1">
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="flex items-center gap-3 px-3 py-2 rounded-lg bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-400 font-medium">
+                  <HomeIcon className="w-5 h-5" />
+                  <span>Dashboard</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/leads" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <Users className="w-5 h-5" />
+                  <span>Lead Management</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/email-campaigns" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <Mail className="w-5 h-5" />
+                  <span>Email Campaigns</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/ai-assistant" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <Phone className="w-5 h-5" />
+                  <span>AI Assistant</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/seo-performance" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <Search className="w-5 h-5" />
+                  <span>SEO Performance</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/analytics" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <BarChart2 className="w-5 h-5" />
+                  <span>Analytics</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/settings" className="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800">
+                  <Settings className="w-5 h-5" />
+                  <span>Settings</span>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          
+          <div className="mt-auto pt-4 border-t border-zinc-200 dark:border-zinc-800">
+            <div className="flex items-center gap-3 px-3 py-2">
+              <div className="w-8 h-8 bg-zinc-300 dark:bg-zinc-700 rounded-full"></div>
+              <div>
+                <p className="font-medium text-sm">Admin</p>
+                <p className="text-xs text-zinc-500 dark:text-zinc-400">Super Admin</p>
+              </div>
+            </div>
+          </div>
+        </aside>
+        
+        {/* Main Content */}
+        <main className="flex-1 p-8">
+          <header className="flex justify-between items-center mb-8">
+            <div>
+              <h1 className="text-2xl font-bold">Mission Control Dashboard</h1>
+              <p className="text-zinc-600 dark:text-zinc-400">Overview of your HVAC digital marketing operations</p>
+            </div>
+          </header>
+          
+          {/* Key Metrics */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Total Leads</h3>
+                <Users className="w-5 h-5 text-zinc-400" />
+              </div>
+              <div className="text-3xl font-bold">8,000</div>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Contacts in database</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Email Campaign</h3>
+                <Mail className="w-5 h-5 text-zinc-400" />
+              </div>
+              <div className="text-3xl font-bold">3/3</div>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Emails sent per lead</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Product 1 - SEO</h3>
+                <Target className="w-5 h-5 text-zinc-400" />
+              </div>
+              <div className="text-3xl font-bold">$4,997</div>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Monthly revenue</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center justify-between mb-2">
+                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">Product 2 - AI Assistant</h3>
+                <Phone className="w-5 h-5 text-zinc-400" />
+              </div>
+              <div className="text-3xl font-bold">$1,997</div>
+              <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Monthly revenue</p>
+            </div>
+          </div>
+          
+          {/* Products Overview */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                  <Target className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                </div>
+                <h2 className="text-xl font-semibold">Product 1: SEO Optimization</h2>
+              </div>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                Appear in the top 3 HVAC business results in local Google searches. Comprehensive SEO strategy including keyword optimization, local listings, and content marketing.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Price:</span>
+                  <span className="font-medium">$4,997/month</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Conversion Rate:</span>
+                  <span className="font-medium text-green-600 dark:text-green-400">~5-10%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Current Clients:</span>
+                  <span className="font-medium">Loading...</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center">
+                  <Phone className="w-5 h-5 text-green-600 dark:text-green-400" />
+                </div>
+                <h2 className="text-xl font-semibold">Product 2: AI Call Assistant</h2>
+              </div>
+              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
+                AI-powered assistant that answers missed calls, qualifies leads, and schedules appointments. Never lose a customer due to missed calls again.
+              </p>
+              <div className="space-y-2 text-sm">
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Price:</span>
+                  <span className="font-medium">$1,997/month</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Conversion Rate:</span>
+                  <span className="font-medium text-green-600 dark:text-green-400">~15-25%</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-zinc-500 dark:text-zinc-400">Current Clients:</span>
+                  <span className="font-medium">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Quick Actions */}
+          <div className="bg-white dark:bg-zinc-900 p-6 rounded-xl border border-zinc-200 dark:border-zinc-800">
+            <h2 className="text-xl font-semibold mb-6">Quick Actions</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <button className="flex items-center gap-3 px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                <Mail className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                <span>Send Next Email Batch</span>
+              </button>
+              <button className="flex items-center gap-3 px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                <Users className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                <span>Import New Leads</span>
+              </button>
+              <button className="flex items-center gap-3 px-4 py-3 border border-zinc-200 dark:border-zinc-800 rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-800 transition-colors">
+                <DollarSign className="w-5 h-5 text-zinc-600 dark:text-zinc-400" />
+                <span>Generate Revenue Report</span>
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  );
+}
