@@ -87,7 +87,11 @@ export default function ImportLeadsModal({
           if (extension === 'csv') {
             leads = parseCSV(content);
           } else if (extension === 'xlsx' || extension === 'xls') {
-            leads = parseExcel(content);
+            const encoder = new TextEncoder();
+            const uint8Array = encoder.encode(content);
+            const arrayBuffer = uint8Array.buffer;
+            leads = parseExcel(arrayBuffer);
+            //leads = parseExcel(content);
           } else if (extension === 'txt') {
             leads = parseTXT(content);
           } else {
